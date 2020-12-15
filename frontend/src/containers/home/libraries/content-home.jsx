@@ -17,7 +17,10 @@ const ContentHome = () => {
 
   useEffect(() => {
     loadData();
-  }, []); // componentDidMount
+    return () => {
+      cleanData();
+    };
+  }, [activity]); // componentDidMount
 
   return (
     <div>
